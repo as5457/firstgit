@@ -26,3 +26,19 @@ length(samp)
 
 I can take the mean of the sample, too!
 The mean is `r mean(samp)`.
+
+
+```{r learning_assessment_1}
+library(tidyverse)
+
+la_df = tibble(
+  norm_samp = rnorm(500),
+  abs_norm_samp = abs(norm_samp)
+)
+
+ggplot(la_df, aes(x = abs_norm_samp)) + geom_histogram()
+```
+
+The median of the variable containing absolute values is 
+`r round(median(la_df$abs_norm_samp), digits = 2)`.
+Formatting text
